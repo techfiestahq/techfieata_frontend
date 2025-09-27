@@ -8,7 +8,8 @@ import Organizer1 from "@/public/organizer-1.png";
 import Organizer2 from "@/public/organizer-1.png";
 import Organizer3 from "@/public/organizer-1.png";
 
-type Person = { name: string; src: any };
+import type { StaticImageData } from "next/image";
+type Person = { name: string; src: StaticImageData };
 
 const people: Person[] = [
   { name: "Dada Dada", src: Organizer1 },

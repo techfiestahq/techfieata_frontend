@@ -22,7 +22,10 @@ const fadeUp = {
 
 export default function ThisYear() {
   return (
-    <section className="relative w-full text-white overflow-hidden">
+    <section
+      id="nominees"
+      className="relative w-full text-white overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0">
         <Image
@@ -34,17 +37,22 @@ export default function ThisYear() {
         />
       </div>
 
-      {/* Top tilted sticker (already positioned relative to the full section) */}
+      {/* Top sticker */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.1 }}
-        className="absolute z-10 top-6 sm:top-8 md:top-44 left-[40%] -translate-x-24 sm:-translate-x-40 md:-translate-x-56 rotate-[12deg]"
+        className="
+    relative z-10 mt-6
+    flex justify-center
+    lg:absolute lg:top-44 lg:left-[40%] 
+    lg:-translate-x-56 lg:rotate-[12deg]
+  "
         aria-hidden
       >
         <div className="rounded-full bg-[#0000003D] ring-1 ring-[#80839682] px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-4 backdrop-blur-[2px] shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
-          <span className="tracking-[0.02em] text-[#FFFFFFC9] text-5xl font-normal">
+          <span className="tracking-[0.02em] text-[#FFFFFFC9] text-xl lg:text-5xl font-normal">
             TechFiesta 2.0
           </span>
         </div>
@@ -56,7 +64,7 @@ export default function ThisYear() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="relative flex flex-col md:flex-row items-center justify-between gap-10 py-16 md:py-24"
+          className="relative flex flex-col lg:flex-row items-center justify-between gap-10 lg:py-24"
         >
           {/* LEFT: copy */}
           <div className="flex-1 max-w-[700px]">
@@ -85,17 +93,22 @@ export default function ThisYear() {
               one <br className="hidden md:block" /> unforgettable evening.
             </motion.p>
 
-            {/* bottom-left tilted sticker */}
+            {/* Bottom sticker */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.1 }}
-              className="absolute z-10 bottom-6 sm:bottom-8 md:bottom-32 left-[20%] -translate-x-24 sm:-translate-x-40 md:-translate-x-56 -rotate-[6deg]"
+              className="
+    relative z-10 mt-8
+    flex justify-center
+    lg:absolute lg:bottom-32 lg:left-[20%] 
+    lg:-translate-x-56 lg:-rotate-[6deg]
+  "
               aria-hidden
             >
               <div className="rounded-full bg-[#0000003D] ring-1 ring-[#80839682] px-6 md:px-8 py-2.5 md:py-4 backdrop-blur-[2px] shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
-                <span className="tracking-[0.02em] text-[#FFFFFFC9] text-5xl font-normal">
+                <span className="tracking-[0.02em] text-[#FFFFFFC9] text-lg sm:text-xl lg:text-5xl font-normal">
                   The Award Edition
                 </span>
               </div>
@@ -105,7 +118,7 @@ export default function ThisYear() {
           {/* RIGHT: trophy (taller via scale) */}
           <motion.div
             variants={fadeUp}
-            className="flex-1 flex justify-center md:justify-end w-full pr-10"
+            className="flex-1 flex justify-center md:justify-end w-full pr-4 lg:pr-10 mt-10"
           >
             <Image
               src={awardImage}

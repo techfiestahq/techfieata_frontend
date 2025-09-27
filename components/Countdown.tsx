@@ -72,11 +72,11 @@ const Countdown: React.FC<CountdownProps> = ({
 
   return (
     <section
-      className={`w-full py-12 sm:py-16 md:py-20 bg-black/80 ${className}`}
+      className={`w-full pt-5 pb-20 bg-[#000000] ${className}`}
       aria-live="polite"
     >
       <div className="mx-auto max-w-5xl px-4">
-        <h3 className="mb-8 sm:mb-10 text-center text-white text-lg lg:text-2xl font-normal">
+        <h3 className="mb-8 sm:mb-10 text-center text-[#FFFFFF] text-lg lg:text-2xl font-normal">
           Count every minutes with us
         </h3>
 

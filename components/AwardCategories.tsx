@@ -39,7 +39,10 @@ const chips: Chip[] = [
 
 export default function AwardCategories() {
   return (
-    <section className="relative w-full text-white overflow-hidden">
+    <section
+      id="awardcategories"
+      className="relative w-full text-white overflow-hidden"
+    >
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -49,17 +52,7 @@ export default function AwardCategories() {
           priority
           className="object-cover"
         />
-        {/* slight dark wash for readability */}
-        {/* <div className="absolute inset-0 bg-[#030915]/40" /> */}
       </div>
-
-      {/* Curved bottom glow like the mock (overlays the image) */}
-      {/* <div className="pointer-events-none absolute inset-x-0 -bottom-28 h-[52vh] -z-0"> */}
-      {/* upper wide ellipse */}
-      {/* <div className="absolute left-1/2 bottom-28 w-[130vw] -translate-x-1/2 h-[42vh] rounded-[999px] bg-[radial-gradient(60%_120%_at_50%_100%,rgba(124,113,255,0.12)_0%,rgba(6,10,22,0)_60%)]" /> */}
-      {/* darker fade to bottom */}
-      {/* <div className="absolute inset-x-0 bottom-0 h-[38vh] bg-[linear-gradient(180deg,_#0D062000_0%,_#0D06204D_40%,_#030915_90%)]" /> */}
-      {/* </div> */}
 
       <ContainerLayout>
         <motion.div
@@ -67,7 +60,7 @@ export default function AwardCategories() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="relative mx-auto py-16 md:py-24"
+          className="relative mx-auto lg:py-24"
         >
           {/* Section label */}
           <motion.div
@@ -88,11 +81,11 @@ export default function AwardCategories() {
           {/* Chips */}
           <motion.div
             variants={fadeUp}
-            className="mx-auto mt-10 max-w-6xl space-y-6"
+            className="mx-auto mt-10 max-w-6xl space-y-10"
           >
-            {/* First row: 2 chips */}
-            <div className="flex justify-center gap-6">
-              {chips.slice(0, 2).map(({ text, rotate = 0, solid }) => (
+            {/* First row: 3 chips */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {chips.slice(0, 3).map(({ text, rotate = 0, solid }) => (
                 <div
                   key={text}
                   style={{ rotate: `${rotate}deg` }}
@@ -111,7 +104,7 @@ export default function AwardCategories() {
 
             {/* Second row: 4 chips */}
             <div className="flex flex-wrap justify-center gap-6">
-              {chips.slice(2, 6).map(({ text, rotate = 0, solid }) => (
+              {chips.slice(3, 7).map(({ text, rotate = 0, solid }) => (
                 <div
                   key={text}
                   style={{ rotate: `${rotate}deg` }}
@@ -130,7 +123,7 @@ export default function AwardCategories() {
 
             {/* Third row: 4 chips */}
             <div className="flex flex-wrap justify-center gap-6">
-              {chips.slice(6, 10).map(({ text, rotate = 0, solid }) => (
+              {chips.slice(7, 11).map(({ text, rotate = 0, solid }) => (
                 <div
                   key={text}
                   style={{ rotate: `${rotate}deg` }}

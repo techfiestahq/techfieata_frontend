@@ -22,17 +22,17 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const mainLinks: NavigationLink[] = [
-    { text: "TechFiesta 1.0", href: "/techfiesta" },
-    { text: "Award Categories", href: "/awards" },
-    { text: "Nominees", href: "/nominees" },
-    { text: "Organizers", href: "/organizers" },
-    { text: "Sponsors", href: "/sponsors" },
+    { text: "TechFiesta 1.0", href: "#techfiesta1.0" },
+    { text: "Award Categories", href: "#awardcategories" },
+    { text: "Nominees", href: "#nominees" },
+    { text: "Organizers", href: "#organizers" },
+    { text: "Sponsors", href: "#sponsors" },
   ];
 
   const secondaryLinks: NavigationLink[] = [
     {
       text: "Become A Sponsor",
-      href: "/become-a-sponsor",
+      href: "/#",
       className:
         "bg-[#00000014] inline-flex items-center justify-center rounded-full px-5 py-2 text-xl font-medium text-[#FFFFFF] ring-1 ring-[#FFFFFF] hover:bg-white/10 transition-colors",
     },

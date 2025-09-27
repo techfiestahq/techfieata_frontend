@@ -28,7 +28,7 @@ const fadeUp = {
 
 function PastEvent() {
   return (
-    <section className="relative w-full bg-white py-16 sm:py-20 md:py-24">
+    <section id="techfiesta1.0" className="relative w-full bg-white lg:py-24">
       {/* Section-scoped background: covers entire section height */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <Image
@@ -79,7 +79,7 @@ function PastEvent() {
           </motion.h2>
 
           {/* Collage — gapless; Row1: 20/40/40, Row2: 40/20/40 */}
-          <div className="mb-20">
+          <div className="mb-5 lg:mb-20">
             {/* Row 1 */}
             <div className="flex w-full gap-0 h-[220px] sm:h-[260px] md:h-[300px]">
               <motion.figure

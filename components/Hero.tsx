@@ -70,10 +70,12 @@ export default function Hero() {
               className="mt-8 flex flex-wrap items-center justify-center gap-3"
             >
               <a
-                href="#tickets"
+                href="https://tix.africa/techfiesta2025"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-xl font-medium text-[#4A22BD] shadow-[0_6px_24px_rgba(255,255,255,0.12)] transition hover:brightness-110"
               >
-                Get your free ticket
+                Get your ticket
               </a>
 
               {/* <a

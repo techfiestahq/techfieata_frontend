@@ -87,17 +87,17 @@ export default function Footer() {
             {[
               {
                 icon: FacebookIcon,
-                href: "https://facebook.com",
+                href: "https://x.com/TechfiestaHQ",
                 label: "Facebook",
               },
               {
                 icon: InstagramIcon,
-                href: "https://instagram.com",
+                href: "https://www.instagram.com/techfiestahq/",
                 label: "Instagram",
               },
               {
                 icon: LinkedinIcon,
-                href: "https://linkedin.com",
+                href: "https://www.linkedin.com/company/techfiesta-hq",
                 label: "LinkedIn",
               },
             ].map(({ icon, href, label }) => (

@@ -50,15 +50,6 @@ export default function Footer() {
           viewport={{ once: true, amount: 0.2 }}
           className="relative flex flex-col items-center gap-8 py-12 md:py-16 lg:flex-row lg:items-center lg:justify-between"
         >
-          {/* Left: hashtag (center on mobile, left on lg+) */}
-          {/* <motion.h2
-            variants={fadeUp}
-            className="text-center lg:text-left text-[40px] sm:text-[64px] lg:text-[88px] font-semibold tracking-tight
-               bg-gradient-to-r from-[#999999] to-[#FFFFFF] bg-clip-text text-transparent"
-          >
-            #TechFiesta
-          </motion.h2> */}
-          {/* Left: Logo */}
           <motion.div
             variants={fadeUp}
             className="flex justify-center lg:justify-start"

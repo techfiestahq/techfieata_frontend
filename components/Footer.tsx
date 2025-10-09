@@ -1,11 +1,10 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ContainerLayout from "@/components/ContainerLayout";
 import FooterBgImage from "@/public/footer-bg-image.jpg";
-import FacebookIcon from "@/public/Fb.svg";
+import TwitterIcon from "@/public/x.svg";
 import InstagramIcon from "@/public/Ig.svg";
 import LinkedinIcon from "@/public/Ln.svg";
 import logo from "@/public/logo.svg";
@@ -86,9 +85,9 @@ export default function Footer() {
           >
             {[
               {
-                icon: FacebookIcon,
+                icon: TwitterIcon,
                 href: "https://x.com/TechfiestaHQ",
-                label: "Facebook",
+                label: "Twitter",
               },
               {
                 icon: InstagramIcon,

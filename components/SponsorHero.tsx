@@ -169,7 +169,7 @@ function LogoGrid({ items }: { items: Sponsor[] }) {
           aria-label={s.alt}
         >
           <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/95 p-3 shadow-lg transition-transform md:h-24 md:w-24 group-hover:scale-105">
-            {"src" in (s as any) && (s as any).src ? (
+            {typeof s.src !== "string" ? (
               <Image
                 src={s.src as StaticImageData}
                 alt={s.alt}
@@ -179,8 +179,10 @@ function LogoGrid({ items }: { items: Sponsor[] }) {
               />
             ) : (
               <Image
-                src={s.src as string}
+                src={s.src}
                 alt={s.alt}
+                width={72}
+                height={72}
                 className="h-12 w-auto object-contain"
               />
             )}

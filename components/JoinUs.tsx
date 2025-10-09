@@ -54,7 +54,9 @@ export default function JoinUs() {
 
             <motion.div variants={fadeLeft} className="mt-8">
               <a
-                href="#tickets"
+                href="https://tix.africa/techfiesta2025"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-[100px] bg-[#FFFFFF] px-6 sm:px-8 py-3 sm:py-4 text-base md:text-xl font-medium text-[#4A22BD] shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99]"
               >
                 Get your Ticket now

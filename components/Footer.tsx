@@ -1,11 +1,10 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ContainerLayout from "@/components/ContainerLayout";
 import FooterBgImage from "@/public/footer-bg-image.jpg";
-import FacebookIcon from "@/public/Fb.svg";
+import TwitterIcon from "@/public/x.svg";
 import InstagramIcon from "@/public/Ig.svg";
 import LinkedinIcon from "@/public/Ln.svg";
 import logo from "@/public/logo.svg";
@@ -86,18 +85,18 @@ export default function Footer() {
           >
             {[
               {
-                icon: FacebookIcon,
-                href: "https://facebook.com",
-                label: "Facebook",
+                icon: TwitterIcon,
+                href: "https://x.com/TechfiestaHQ",
+                label: "Twitter",
               },
               {
                 icon: InstagramIcon,
-                href: "https://instagram.com",
+                href: "https://www.instagram.com/techfiestahq/",
                 label: "Instagram",
               },
               {
                 icon: LinkedinIcon,
-                href: "https://linkedin.com",
+                href: "https://www.linkedin.com/company/techfiesta-hq",
                 label: "LinkedIn",
               },
             ].map(({ icon, href, label }) => (

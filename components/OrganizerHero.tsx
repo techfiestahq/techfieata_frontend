@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import Organizer1 from "@/public/olaifa-glory.webp";
 import Organizer2 from "@/public/Esuola-Daniel.webp";
 import Organizer3 from "@/public/Quyum-Kehinde.webp";
-import Organizer4 from "@/public/organizer-1.png";
+import Organizer4 from "@/public/Toby.webp";
 import SponsorHeroBgImage from "@/public/sponsor-hero-bg-image.png";
+import Team1 from "@/public/Confidence-Ufuoma.webp";
+import Team2 from "@/public/john-olaniyi.webp";
 
 const variants = {
   container: {
@@ -39,14 +41,12 @@ export default function SponsorsSection() {
     { name: "Glory Olaifa", src: Organizer1, role: "Convener" },
     { name: "Deniel Esuola", src: Organizer2, role: "Organizer" },
     { name: "Kehinde Quyum", src: Organizer3, role: "Organizer" },
-    { name: "Dada Dada", src: Organizer4, role: "Organizer" },
+    { name: "Adio Testimony", src: Organizer4, role: "Organizer" },
   ];
 
   const team: Person[] = [
-    { name: "Glory Olaifa", src: Organizer4, role: "Frontend dev" },
-    { name: "Deniel Esuola", src: Organizer4, role: "Designer" },
-    { name: "Kehinde Quyum", src: Organizer4, role: "Designer" },
-    { name: "Dada Dada", src: Organizer4, role: "Designer" },
+    { name: "Confidence Ufuoma", src: Team1, role: "Content Creator" },
+    { name: "Olaniyi John", src: Team2, role: "Frontend developer" },
   ];
 
   return (
@@ -92,7 +92,7 @@ export default function SponsorsSection() {
           <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
             {people.map(({ name, src, role }, i) => (
               <div key={i} className="w-full max-w-[360px]">
-                <div className="relative w-[260px] h-[260px] md:w-[300px] md:h-[300px] overflow-hidden rounded-xl ring-1 ring-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
+                <div className="m-auto relative w-[260px] h-[260px] md:w-[300px] md:h-[300px] overflow-hidden rounded-xl ring-1 ring-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
                   <Image
                     src={src}
                     alt={name}
@@ -122,7 +122,7 @@ export default function SponsorsSection() {
           <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
             {team.map(({ name, src, role }, i) => (
               <div key={i} className="w-full max-w-[360px]">
-                <div className="relative w-[260px] h-[260px] md:w-[300px] md:h-[300px] overflow-hidden rounded-xl ring-1 ring-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
+                <div className="m-auto relative w-[260px] h-[260px] md:w-[300px] md:h-[300px] overflow-hidden rounded-xl ring-1 ring-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
                   <Image
                     src={src}
                     alt={name}

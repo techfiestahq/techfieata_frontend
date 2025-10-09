@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import SponsorHeroBgImage from "@/public/sponsor-hero-bg-image.png";
 import DevfestLogo from "@/public/devfest-logo.svg";
 // import GDGLogo from "@/public/gdg-logo.svg";
-import StarIcon from "@/public/star_shine.svg";
+import STAR_ICON from "@/public/star_shine.svg";
 
 type Sponsor = { src: StaticImageData | string; alt: string };
 
@@ -108,7 +108,7 @@ function TierMarquee({
                 {label}
               </span>
               <Image
-                src={StarIcon}
+                src={STAR_ICON}
                 alt=""
                 width={22}
                 height={22}
@@ -130,7 +130,7 @@ function TierMarquee({
                 {label}
               </span>
               <Image
-                src={StarIcon}
+                src={STAR_ICON}
                 alt=""
                 width={22}
                 height={22}
@@ -236,11 +236,7 @@ export default function SponsorsSection({
 
         {/* Platinum Tier */}
         <motion.div variants={variants.fadeUp}>
-          <TierMarquee
-            label="Platinum Sponsors"
-            speed={26}
-            segmentLength={7.5}
-          />
+          <TierMarquee label="Platinum Sponsors" speed={26} segmentLength={7} />
           <div className="mt-6 md:mt-10">
             <LogoGrid items={sponsors.platinum} />
           </div>

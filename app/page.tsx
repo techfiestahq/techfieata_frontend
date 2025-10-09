@@ -1,4 +1,3 @@
-// import Image from "next/image";
 "use client";
 import AwardCategories from "@/components/AwardCategories";
 import Countdown from "@/components/Countdown";
@@ -19,7 +18,7 @@ export default function Home() {
       <Countdown
         target="2025-11-30T18:00:00"
         onComplete={() => console.log("Event started!")}
-        className="mt-5 lg:mt-40"
+        className="bg-[#000000] pt-5 lg:pt-40"
       />
       <PastEvent />
       <ThisYear />

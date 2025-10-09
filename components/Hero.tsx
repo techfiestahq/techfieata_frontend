@@ -76,12 +76,12 @@ export default function Hero() {
                 Get your free ticket
               </a>
 
-              <a
+              {/* <a
                 href="#nominate"
                 className="inline-flex items-center justify-center rounded-full bg-white/0 px-8 py-3 text-xl font-medium text-white ring-1 ring-white backdrop-blur hover:bg-white/10 transition"
               >
                 Nominate
-              </a>
+              </a> */}
             </motion.div>
 
             {/* Award image (in normal flow) */}

@@ -8,6 +8,7 @@ import FooterBgImage from "@/public/footer-bg-image.jpg";
 import FacebookIcon from "@/public/Fb.svg";
 import InstagramIcon from "@/public/Ig.svg";
 import LinkedinIcon from "@/public/Ln.svg";
+import logo from "@/public/logo.svg";
 
 const container = {
   hidden: { opacity: 0 },
@@ -51,13 +52,28 @@ export default function Footer() {
           className="relative flex flex-col items-center gap-8 py-12 md:py-16 lg:flex-row lg:items-center lg:justify-between"
         >
           {/* Left: hashtag (center on mobile, left on lg+) */}
-          <motion.h2
+          {/* <motion.h2
             variants={fadeUp}
             className="text-center lg:text-left text-[40px] sm:text-[64px] lg:text-[88px] font-semibold tracking-tight
                bg-gradient-to-r from-[#999999] to-[#FFFFFF] bg-clip-text text-transparent"
           >
             #TechFiesta
-          </motion.h2>
+          </motion.h2> */}
+          {/* Left: Logo */}
+          <motion.div
+            variants={fadeUp}
+            className="flex justify-center lg:justify-start"
+          >
+            <div className="relative h-10 w-[160px] sm:h-14 sm:w-[200px] lg:h-16 lg:w-[240px]">
+              <Image
+                src={logo}
+                alt="TechFiesta Logo"
+                fill
+                priority
+                className="object-contain brightness-0 invert"
+              />
+            </div>
+          </motion.div>
 
           {/* Middle: socials — absolute centered ONLY on lg+ */}
           <motion.div

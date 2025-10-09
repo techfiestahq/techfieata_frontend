@@ -7,7 +7,7 @@ import type { NavigationLink } from "@/types/navigation";
 import NavLink from "./NavLink";
 import MobileNav from "./MobileNav";
 import { cn } from "@/lib/utils";
-import LogoImage from "@/public/Techfiesta.png";
+import logo from "@/public/logo.svg";
 
 const Navbar = () => {
   const router = useRouter();
@@ -22,11 +22,12 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const mainLinks: NavigationLink[] = [
-    { text: "TechFiesta 1.0", href: "#techfiesta1.0" },
-    { text: "Award Categories", href: "#awardcategories" },
-    { text: "Nominees", href: "#nominees" },
-    { text: "Organizers", href: "#organizers" },
-    { text: "Sponsors", href: "#sponsors" },
+    { text: "Home", href: "/" },
+    // { text: "Award Categories", href: "#awardcategories" },
+    // { text: "Nominees", href: "#nominees" },
+    { text: "About Us", href: "/about-us" },
+    { text: "Organizers", href: "/organizers" },
+    { text: "Sponsors", href: "/sponsors" },
   ];
 
   const secondaryLinks: NavigationLink[] = [
@@ -48,14 +49,14 @@ const Navbar = () => {
             <button
               onClick={() => router.push("/")}
               aria-label="Home"
-              className="relative h-7 w-[120px] shrink-0 lg:h-8 lg:w-[150px]"
+              className="relative h-10 w-[180px] shrink-0 lg:h-12 lg:w-[210px]"
             >
               <Image
-                src={LogoImage}
+                src={logo}
                 alt="Techfiesta"
                 fill
                 priority
-                className="object-contain"
+                className="object-contain brightness-0 invert"
               />
             </button>
           </div>

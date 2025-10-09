@@ -64,7 +64,7 @@ export default function Sponsors() {
         {/* CTA */}
         <div className="mt-14 flex justify-center">
           <a
-            href="#sponsor"
+            href="/sponsors"
             className="inline-flex items-center justify-center rounded-[100px] bg-[#4A21BD] px-6 md:px-8 py-3 text-sm md:text-xl font-medium text-[#FFFFFF] shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition hover:brightness-110"
           >
             Become our Sponsor

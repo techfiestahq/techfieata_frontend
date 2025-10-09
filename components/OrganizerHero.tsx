@@ -81,13 +81,6 @@ export default function SponsorsSection() {
             Organizers
           </motion.h2>
 
-          {/* <motion.p
-          variants={variants.fadeUp}
-          className="mx-auto mb-10 max-w-2xl text-base text-white/80 md:mb-16 md:text-lg"
-        >
-          We’re grateful to the organizations powering this year’s TechFiesta.
-        </motion.p> */}
-
           {/* Cards */}
           <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
             {people.map(({ name, src, role }, i) => (

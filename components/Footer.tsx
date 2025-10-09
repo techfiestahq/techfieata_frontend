@@ -34,13 +34,7 @@ export default function Footer() {
           priority
           className="object-cover"
         />
-        {/* deep indigo wash + vignette to match mock */}
-        {/* <div className="absolute inset-0 bg-[#05081A]/80" /> */}
-        {/* <div className="absolute inset-0 bg-[radial-gradient(110%_80%_at_50%_10%,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0)_55%)] pointer-events-none" /> */}
       </div>
-
-      {/* Large soft rounded panel glow */}
-      {/* <div className="pointer-events-none absolute left-1/2 top-6 h-[78%] w-[92%] -translate-x-1/2 rounded-[40px] bg-[linear-gradient(180deg,rgba(29,34,74,0.35),rgba(29,34,74,0.12))] shadow-[0_30px_120px_rgba(0,0,0,0.45)]" /> */}
 
       <ContainerLayout>
         <motion.div
@@ -50,15 +44,6 @@ export default function Footer() {
           viewport={{ once: true, amount: 0.2 }}
           className="relative flex flex-col items-center gap-8 py-12 md:py-16 lg:flex-row lg:items-center lg:justify-between"
         >
-          {/* Left: hashtag (center on mobile, left on lg+) */}
-          {/* <motion.h2
-            variants={fadeUp}
-            className="text-center lg:text-left text-[40px] sm:text-[64px] lg:text-[88px] font-semibold tracking-tight
-               bg-gradient-to-r from-[#999999] to-[#FFFFFF] bg-clip-text text-transparent"
-          >
-            #TechFiesta
-          </motion.h2> */}
-          {/* Left: Logo */}
           <motion.div
             variants={fadeUp}
             className="flex justify-center lg:justify-start"

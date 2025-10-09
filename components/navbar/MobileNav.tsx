@@ -22,7 +22,6 @@ const MobileNav = ({
 
   return (
     <>
-      {/* Dim overlay */}
       <div
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden z-40 ${
           isOpen
@@ -32,7 +31,6 @@ const MobileNav = ({
         onClick={onClose}
       />
 
-      {/* Slide-in panel (transparent glassy look) */}
       <div
         className={`fixed top-0 right-0 z-50 h-full w-[85%] sm:w-[60%] transform transition-transform duration-300 ease-out lg:hidden
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}

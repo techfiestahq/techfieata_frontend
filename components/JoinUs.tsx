@@ -31,7 +31,6 @@ export default function JoinUs() {
           priority
           className="object-cover"
         />
-        {/* Left-to-right gradient overlay: #030915B2 → #0D062000 */}
         <div className="absolute inset-0 bg-[linear-gradient(90deg,_#030915B2_0%,_#030915B2_35%,_#0D062000_80%)]" />
       </div>
 

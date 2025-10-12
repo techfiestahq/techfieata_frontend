@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Organizer1 from "@/public/olaifa-glory.webp";
 import Organizer2 from "@/public/Esuola-Daniel.webp";
 import Organizer3 from "@/public/Quyum-Kehinde.webp";
-import Organizer4 from "@/public/Toby.webp";
+import Organizer4 from "@/public/Toby-Toby.webp";
 import SponsorHeroBgImage from "@/public/sponsor-hero-bg-image.png";
 import Team1 from "@/public/Confidence-Ufuoma.webp";
 import Team2 from "@/public/john-olaniyi.webp";
@@ -39,7 +39,7 @@ type Person = { name: string; src: StaticImageData; role: string };
 export default function SponsorsSection() {
   const people: Person[] = [
     { name: "Glory Olaifa", src: Organizer1, role: "Convener" },
-    { name: "Deniel Esuola", src: Organizer2, role: "Organizer" },
+    { name: "Daniel Esuola", src: Organizer2, role: "Organizer" },
     { name: "Kehinde Quyum", src: Organizer3, role: "Organizer" },
     { name: "Adio Testimony", src: Organizer4, role: "Organizer" },
   ];

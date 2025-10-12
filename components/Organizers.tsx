@@ -6,7 +6,7 @@ import OrganizerBgImage from "@/public/organizer-bg-image.jpg";
 import Organizer1 from "@/public/olaifa-glory.webp";
 import Organizer2 from "@/public/Esuola-Daniel.webp";
 import Organizer3 from "@/public/Quyum-Kehinde.webp";
-import Organizer4 from "@/public/Toby.webp";
+import Organizer4 from "@/public/Toby-Toby.webp";
 
 import type { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ type Person = { name: string; src: StaticImageData; role: string };
 
 const people: Person[] = [
   { name: "Glory Olaifa", src: Organizer1, role: "Convener" },
-  { name: "Deniel Esuola", src: Organizer2, role: "Organizer" },
+  { name: "Daniel Esuola", src: Organizer2, role: "Organizer" },
   { name: "Kehinde Quyum", src: Organizer3, role: "Organizer" },
   { name: "Adio Testimony", src: Organizer4, role: "Organizer" },
 ];

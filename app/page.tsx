@@ -1,32 +1,21 @@
-"use client";
-import AwardCategories from "@/components/AwardCategories";
-import Countdown from "@/components/Countdown";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import JoinUs from "@/components/JoinUs";
-import Navbar from "@/components/navbar/Navbar";
-import Organizers from "@/components/Organizers";
-import PastEvent from "@/components/PastEvent";
-import Sponsors from "@/components/Sponsors";
-import ThisYear from "@/components/ThisYear";
+import type { Metadata } from "next";
+import ClientHome from "./ClientHome";
+
+export const metadata: Metadata = {
+  title: "TechFiesta 2.0 – Nigeria's Biggest Tech Community Dinner & Awards",
+  description:
+    "Join innovators, creators, and leaders shaping Nigeria's tech ecosystem at TechFiesta 2.0 – a night to celebrate the builders.",
+  openGraph: {
+    title: "TechFiesta 2.0 – Nigeria's Biggest Tech Community Dinner & Awards",
+    description:
+      "Join innovators, creators, and leaders shaping Nigeria's tech ecosystem at TechFiesta 2.0 – a night to celebrate the builders.",
+    images: ["/og-image.webp"], // note: no /public prefix
+    url: "https://techfiesta.africa/",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
+};
 
 export default function Home() {
-  return (
-    <main className="h-auto overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <Countdown
-        target="2025-11-30T18:00:00"
-        onComplete={() => console.log("Event started!")}
-        className="bg-[#000000] pt-5 lg:pt-40"
-      />
-      <PastEvent />
-      <ThisYear />
-      <AwardCategories />
-      <Sponsors />
-      <Organizers />
-      <JoinUs />
-      <Footer />
-    </main>
-  );
+  return <ClientHome />;
 }

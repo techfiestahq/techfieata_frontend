@@ -10,6 +10,8 @@ import Organizer4 from "@/public/Toby-Toby.webp";
 import SponsorHeroBgImage from "@/public/sponsor-hero-bg-image.png";
 import Team1 from "@/public/Confidence-Ufuoma.webp";
 import Team2 from "@/public/john-olaniyi.webp";
+import Team3 from "@/public/Ajibola-Adeyemo .webp";
+import Team4 from "@/public/Idowu-Oluwatomisin.webp";
 
 const variants = {
   container: {
@@ -47,6 +49,8 @@ export default function SponsorsSection() {
   const team: Person[] = [
     { name: "Confidence Ufuoma", src: Team1, role: "Content Creator" },
     { name: "Olaniyi John", src: Team2, role: "Frontend developer" },
+    { name: "Ajibola Adeyemo", src: Team3, role: "PR/Publicity Lead" },
+    { name: "Idowu Oluwatomisin", src: Team4, role: "Event Planner" },
   ];
 
   return (

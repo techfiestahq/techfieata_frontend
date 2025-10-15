@@ -6,17 +6,26 @@ import ContainerLayout from "@/components/ContainerLayout";
 import SponsorBgImage from "@/public/sponsor-bg-image.jpg";
 import DevfestLogo from "@/public/devfest-logo.svg";
 import GDGLogo from "@/public/gdg-logo.svg";
+import Asset3logo from "@/public/asset-3logo.webp";
+import BkHeader from "@/public/bkheader-01.webp";
+import KtcSticker from "@/public/ktc-sticker-black.webp";
 
 const sponsors = [
   { src: GDGLogo, alt: "GDG Ogbomoso" },
   { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: GDGLogo, alt: "GDG Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: GDGLogo, alt: "GDG Ogbomoso" },
   { src: GDGLogo, alt: "GDG Ogbomoso" },
   { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  { src: Asset3logo, alt: "DevFest Ogbomoso" },
+  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  { src: BkHeader, alt: "DevFest Ogbomoso" },
+  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  { src: KtcSticker, alt: "DevFest Ogbomoso" },
 ];
 
 export default function Sponsors() {

@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import ContainerLayout from "@/components/ContainerLayout";
@@ -9,22 +8,26 @@ import GDGLogo from "@/public/gdg-logo.svg";
 import Asset3logo from "@/public/asset-3logo.webp";
 import BkHeader from "@/public/bkheader-01.webp";
 import KtcSticker from "@/public/ktc-sticker-black.webp";
+import GdgLautech from "@/public/gdg-lautech.webp";
+import GdgIlorin from "@/public/gdg-ilorin.webp";
 
 const sponsors = [
   { src: GDGLogo, alt: "GDG Ogbomoso" },
   { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  { src: GDGLogo, alt: "GDG Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  { src: GDGLogo, alt: "GDG Ogbomoso" },
-  { src: GDGLogo, alt: "GDG Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  { src: GdgLautech, alt: "gdg lautech" },
+  { src: GdgIlorin, alt: "Gdg Ilorin" },
+  // { src: GDGLogo, alt: "GDG Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  // { src: GDGLogo, alt: "GDG Ogbomoso" },
+  // { src: GDGLogo, alt: "GDG Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: Asset3logo, alt: "DevFest Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: BkHeader, alt: "DevFest Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: KtcSticker, alt: "DevFest Ogbomoso" },
 ];
 
@@ -58,13 +61,22 @@ export default function Sponsors() {
         </h2>
 
         {/* Logos grid */}
-        <div className="mx-auto grid max-w-5xl grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-10 items-center justify-items-center">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-10 gap-y-10 items-center justify-items-center">
           {sponsors.map((s, idx) => (
+            // <div key={idx} className="flex items-center justify-center">
+            //   <Image
+            //     src={s.src}
+            //     alt={s.alt}
+            //     className="h-16 w-auto md:h-20 object-contain"
+            //   />
+            // </div>
             <div key={idx} className="flex items-center justify-center">
               <Image
                 src={s.src}
                 alt={s.alt}
-                className="h-16 w-auto md:h-20 object-contain"
+                className={`h-16 w-auto md:h-20 object-contain ${
+                  s.alt === "gdg lautech" ? "!h-28 md:!h-32" : ""
+                }`}
               />
             </div>
           ))}

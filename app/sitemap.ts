@@ -5,19 +5,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://www.techfiesta.africa",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "daily",
       priority: 1,
     },
     {
       url: "https://www.techfiesta.africa/about-us",
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
     {
       url: "https://www.techfiesta.africa/organizers",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 0.7,
     },
     {

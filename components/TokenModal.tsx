@@ -1,0 +1,86 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
+import { X } from "lucide-react";
+
+type TokenModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
+
+export default function TokenModal({ isOpen, onClose }: TokenModalProps) {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Sending token to:", email);
+    // TODO: connect API endpoint here
+  };
+
+  // click outside to close
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // only close if the click was directly on the backdrop, not on modal content
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={handleBackdropClick}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+        >
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+            className="relative bg-[#0D0D0D] text-white rounded-3xl shadow-2xl w-[90%] max-w-1/2 p-8 border border-[#24096FA1]"
+          >
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="absolute top-8 right-8 text-white/60 hover:text-white transition cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Modal content */}
+            <div className="text-center my-16">
+              <h2 className="text-2xl md:text-4xl font-medium mb-6 leading-snug">
+                Enter your email to receive <br /> your unique voting token
+              </h2>
+
+              <p className="text-[#F9F9F9CC] text-lg font-normal mb-8">
+                Each voter receives a unique access token via email. <br />
+                You can use it anytime, but only once.
+              </p>
+
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row items-center justify-center gap-3"
+              >
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="bg-[#FFFFFF] border border-[#8E8E9378] text-xl font-normal w-[432px] h-16 rounded-[100px] px-6 text-black outline-none"
+                />
+                <button className="w-full h-16 sm:w-auto bg-[#4A21BD] hover:bg-[#7C3AED] text-white text-xl font-medium rounded-[100px] px-14 transition-colors cursor-pointer">
+                  Send Token
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}

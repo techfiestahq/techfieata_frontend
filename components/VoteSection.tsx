@@ -179,7 +179,7 @@ export default function VoteSection({
                 {category.title}
               </h3>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
                 {category.nominees.map((nominee, idx) => {
                   const isVoting = votingNomineeId === nominee.id;
                   const isVotedNominee = userVotedNomineeId === nominee.id;
@@ -233,9 +233,9 @@ export default function VoteSection({
                             : "Vote"}
                         </button>
                         <div className="text-white text-end">
-                          <p className="text-2xl font-bold">
+                          {/* <p className="text-2xl font-bold">
                             {nominee.percentage}%
-                          </p>
+                          </p> */}
                           <p className="text-xs font-normal">
                             {nominee.votesCount}{" "}
                             {nominee.votesCount === 1 ? "vote" : "votes"}

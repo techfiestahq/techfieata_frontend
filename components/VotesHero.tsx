@@ -172,7 +172,7 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="relative flex flex-col items-center justify-center text-center py-24 md:py-32"
+          className="relative flex flex-col items-center justify-center text-center pt-24 md:pt-32"
         >
           {/* Heading */}
           <motion.h1

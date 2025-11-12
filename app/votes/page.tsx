@@ -1,40 +1,56 @@
-import React from "react";
-import type { Metadata } from "next";
+"use client";
+
+import React, { useState } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import VotesHero from "@/components/VotesHero";
-import Awards from "@/components/Awards";
+import VoteComplete from "@/components/VoteComplete";
+import VoteSection from "@/components/VoteSection";
 import BecomeSponsors from "@/components/BecomeSponsor";
 import JoinUs from "@/components/JoinUs";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
-  title: "Vote for the people shaping Nigeria’s tech story.",
-  description:
-    "Your vote helps spotlight the builders, innovators, and connectors driving Nigeria’s tech ecosystem forward.",
-  openGraph: {
-    title: "Vote for the people shaping Nigeria’s tech story.",
-    description:
-      "Your vote helps spotlight the builders, innovators, and connectors driving Nigeria’s tech ecosystem forward.",
-    images: ["/public/og-image.webp"],
-    url: "https://techfiesta.africa/votes",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-};
+export default function VotesPage() {
+  const [token, setToken] = useState<string>("");
+  const [hasVoted, setHasVoted] = useState<boolean>(false);
+  const [votedNomineeId, setVotedNomineeId] = useState<string | undefined>();
 
-function page() {
+  const handleTokenVerified = (
+    verifiedToken: string,
+    voted: boolean,
+    nomineeId?: string
+  ) => {
+    setToken(verifiedToken);
+    setHasVoted(voted);
+    setVotedNomineeId(nomineeId);
+  };
+
+  const handleVoteSuccess = (nomineeId: string) => {
+    setHasVoted(true);
+    setVotedNomineeId(nomineeId);
+  };
+
   return (
     <main className="h-auto overflow-x-hidden">
       <Navbar />
-      <VotesHero />
-      <Awards />
+      {hasVoted ? (
+        <VoteComplete />
+      ) : (
+        <VotesHero onTokenVerified={handleTokenVerified} />
+      )}
+
+      {/* Only show VoteSection if user hasn't voted yet */}
+      {!hasVoted && (
+        <VoteSection
+          token={token}
+          hasVoted={hasVoted}
+          votedNomineeId={votedNomineeId}
+          onVoteSuccess={handleVoteSuccess}
+        />
+      )}
+
       <BecomeSponsors />
       <JoinUs />
       <Footer />
     </main>
   );
 }
-
-export default page;

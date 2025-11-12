@@ -26,6 +26,7 @@ const Navbar = () => {
     // { text: "Award Categories", href: "#awardcategories" },
     // { text: "Nominees", href: "#nominees" },
     { text: "About Us", href: "/about-us" },
+    { text: "Votes", href: "/votes" },
     { text: "Organizers", href: "/organizers" },
     { text: "Sponsors", href: "/sponsors" },
   ];
@@ -72,7 +73,7 @@ const Navbar = () => {
                       key={link.text}
                       href={link.href}
                       className={cn(
-                        "text-[14px] px-3 py-3 rounded-full",
+                        "text-[14px] px-5 py-3 rounded-full",
                         active && "bg-white/10"
                       )}
                     >

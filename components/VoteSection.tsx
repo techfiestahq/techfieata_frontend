@@ -120,9 +120,13 @@ export default function VoteSection({
 
       // Refresh results to show updated vote counts
       await fetchResults();
-    } catch (err: any) {
+    } catch (err) {
       console.error("Vote error:", err);
-      setErrorMessage(err.message || "Failed to cast vote. Please try again.");
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Failed to cast vote. Please try again.";
+      setErrorMessage(errorMessage);
       setTimeout(() => setErrorMessage(""), 5000);
     } finally {
       setVotingNomineeId(null);

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContainerLayout from "@/components/ContainerLayout";
 import TokenModal from "@/components/TokenModal";
@@ -50,12 +50,8 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
   const [isVerified, setIsVerified] = useState(false);
   const [checkingToken, setCheckingToken] = useState(true);
 
-  // Check if user already has a verified token in localStorage
-  useEffect(() => {
-    checkExistingToken();
-  }, []);
-
-  const checkExistingToken = async () => {
+  // Memoize checkExistingToken to avoid recreating it on every render
+  const checkExistingToken = useCallback(async () => {
     setCheckingToken(true);
 
     // Check localStorage for saved token
@@ -86,7 +82,12 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
     }
 
     setCheckingToken(false);
-  };
+  }, [onTokenVerified]);
+
+  // Check if user already has a verified token in localStorage
+  useEffect(() => {
+    checkExistingToken();
+  }, [checkExistingToken]);
 
   const handleVerifyToken = async () => {
     const trimmedToken = token.trim().toUpperCase();
@@ -136,9 +137,13 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
         statusData.hasVoted || false,
         statusData.vote?.nomineeId
       );
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      setErrorMessage(err.message || "Verification failed. Please try again.");
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Verification failed. Please try again.";
+      setErrorMessage(errorMessage);
     } finally {
       setLoading(false);
     }

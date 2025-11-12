@@ -50,9 +50,11 @@ export default function TokenModal({
       // ✅ Success: Close current modal & open Token Sent modal
       onClose();
       setIsTokenSentOpen(true);
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      setError(err.message || "An unexpected error occurred.");
+      const errorMessage =
+        err instanceof Error ? err.message : "An unexpected error occurred.";
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContainerLayout from "@/components/ContainerLayout";
 import TokenModal from "@/components/TokenModal";
@@ -33,11 +33,17 @@ const fadeInScale = {
   },
 };
 
+interface VoteData {
+  categoryId: string;
+  nomineeId: string;
+}
+
 interface VoteSectionProps {
   onTokenVerified?: (
     token: string,
-    hasVoted: boolean,
-    votedNomineeId?: string
+    votes: VoteData[],
+    totalCategories: number,
+    hasVotedInAllCategories: boolean
   ) => void;
 }
 
@@ -50,44 +56,62 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
   const [isVerified, setIsVerified] = useState(false);
   const [checkingToken, setCheckingToken] = useState(true);
 
-  // Memoize checkExistingToken to avoid recreating it on every render
-  const checkExistingToken = useCallback(async () => {
-    setCheckingToken(true);
+  // Use ref to track if we've already checked on mount
+  const hasCheckedToken = useRef(false);
 
-    // Check localStorage for saved token
-    const savedToken = localStorage.getItem("voting_token");
+  // Check if user already has a verified token in localStorage - ONLY ONCE on mount
+  useEffect(() => {
+    // Prevent running multiple times
+    if (hasCheckedToken.current) return;
+    hasCheckedToken.current = true;
 
-    if (savedToken) {
-      try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/vote/status/${savedToken}`
-        );
+    const checkExistingToken = async () => {
+      setCheckingToken(true);
 
-        const data = await res.json();
+      // Check localStorage for saved token
+      const savedToken = localStorage.getItem("voting_token");
 
-        if (res.ok && data.isVerified) {
-          setToken(savedToken);
-          setIsVerified(true);
+      if (savedToken) {
+        try {
+          const res = await fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/vote/status/${savedToken}`
+          );
 
-          // Pass token and vote status to parent
-          onTokenVerified?.(savedToken, data.hasVoted, data.vote?.nomineeId);
-        } else {
-          // Token invalid or not verified, clear localStorage
+          const data = await res.json();
+
+          if (res.ok && data.isVerified) {
+            setToken(savedToken);
+            setIsVerified(true);
+
+            // Extract vote data per category
+            const votes: VoteData[] =
+              data.votes?.map((vote: any) => ({
+                categoryId: vote.categoryId,
+                nomineeId: vote.nomineeId,
+              })) || [];
+
+            // Pass comprehensive vote status to parent
+            onTokenVerified?.(
+              savedToken,
+              votes,
+              data.totalCategories || 0,
+              data.hasVotedInAllCategories || false
+            );
+          } else {
+            // Token invalid or not verified, clear localStorage
+            localStorage.removeItem("voting_token");
+          }
+        } catch (err) {
+          console.error("Error checking existing token:", err);
           localStorage.removeItem("voting_token");
         }
-      } catch (err) {
-        console.error("Error checking existing token:", err);
-        localStorage.removeItem("voting_token");
       }
-    }
 
-    setCheckingToken(false);
-  }, [onTokenVerified]);
+      setCheckingToken(false);
+    };
 
-  // Check if user already has a verified token in localStorage
-  useEffect(() => {
     checkExistingToken();
-  }, [checkExistingToken]);
+  }, []);
 
   const handleVerifyToken = async () => {
     const trimmedToken = token.trim().toUpperCase();
@@ -132,10 +156,19 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
 
       const statusData = await statusRes.json();
 
+      // Extract vote data per category
+      const votes: VoteData[] =
+        statusData.votes?.map((vote: any) => ({
+          categoryId: vote.categoryId,
+          nomineeId: vote.nomineeId,
+        })) || [];
+
+      // Pass comprehensive vote status to parent
       onTokenVerified?.(
         trimmedToken,
-        statusData.hasVoted || false,
-        statusData.vote?.nomineeId
+        votes,
+        statusData.totalCategories || 0,
+        statusData.hasVotedInAllCategories || false
       );
     } catch (err) {
       console.error(err);

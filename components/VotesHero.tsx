@@ -38,6 +38,11 @@ interface VoteData {
   nomineeId: string;
 }
 
+interface VoteFromAPI {
+  categoryId: string;
+  nomineeId: string;
+}
+
 interface VoteSectionProps {
   onTokenVerified?: (
     token: string,
@@ -85,7 +90,7 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
 
             // Extract vote data per category
             const votes: VoteData[] =
-              data.votes?.map((vote: any) => ({
+              data.votes?.map((vote: VoteFromAPI) => ({
                 categoryId: vote.categoryId,
                 nomineeId: vote.nomineeId,
               })) || [];
@@ -159,7 +164,7 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
 
       // Extract vote data per category
       const votes: VoteData[] =
-        statusData.votes?.map((vote: any) => ({
+        statusData.votes?.map((vote: VoteFromAPI) => ({
           categoryId: vote.categoryId,
           nomineeId: vote.nomineeId,
         })) || [];

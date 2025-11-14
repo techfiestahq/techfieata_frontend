@@ -111,6 +111,7 @@ export default function VotesHero({ onTokenVerified }: VoteSectionProps) {
     };
 
     checkExistingToken();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleVerifyToken = async () => {

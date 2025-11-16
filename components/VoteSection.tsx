@@ -17,6 +17,8 @@ interface Nominee {
   imageUrl: string | null;
   votesCount: number;
   percentage: string;
+  linkedinUrl: string;
+  twitterUrl: string;
 }
 
 interface Category {
@@ -298,10 +300,10 @@ export default function VoteSection({
                           </button>
 
                           <div className="flex items-center gap-5 text-white text-end">
-                            <Link href="" target="_blank">
+                            <Link href={nominee?.twitterUrl} target="_blank">
                               <FaTwitter size={24} className="cursor-pointer" />
                             </Link>
-                            <Link href="" target="_blank">
+                            <Link href={nominee?.linkedinUrl} target="_blank">
                               <FaLinkedin
                                 size={24}
                                 className="cursor-pointer"

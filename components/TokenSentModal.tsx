@@ -37,7 +37,7 @@ export default function TokenSentModal({
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-[#0D0D0D] text-white rounded-3xl shadow-2xl w-[90%] max-w-1/2 p-8 border border-[#141414]"
+            className="relative bg-[#0D0D0D] text-white rounded-3xl shadow-2xl w-[90%] lg:max-w-1/2 p-8 border border-[#141414]"
           >
             {/* Close button */}
             <button

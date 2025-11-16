@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ContainerLayout from "@/components/ContainerLayout";
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -73,6 +75,8 @@ export default function VoteSection({
       setLoading(false);
     }
   };
+
+  console.log(categories);
 
   const handleSelectNominee = (categoryId: string, nomineeId: string) => {
     // Can't change vote if already voted in this category
@@ -293,11 +297,20 @@ export default function VoteSection({
                               : "Vote"}
                           </button>
 
-                          <div className="text-white text-end">
-                            <p className="text-xs font-normal">
+                          <div className="flex items-center gap-5 text-white text-end">
+                            <Link href="" target="_blank">
+                              <FaTwitter size={24} className="cursor-pointer" />
+                            </Link>
+                            <Link href="" target="_blank">
+                              <FaLinkedin
+                                size={24}
+                                className="cursor-pointer"
+                              />
+                            </Link>
+                            {/* <p className="text-xs font-normal">
                               {nominee.votesCount}{" "}
                               {nominee.votesCount === 1 ? "vote" : "votes"}
-                            </p>
+                            </p> */}
                           </div>
                         </div>
                       </motion.div>

@@ -27,7 +27,7 @@ const Navbar = () => {
     // { text: "Award Categories", href: "#awardcategories" },
     // { text: "Nominees", href: "#nominees" },
     { text: "About Us", href: "/about-us" },
-    { text: "Votes", href: "/votes" },
+    // { text: "Votes", href: "/votes" },
     { text: "Organizers", href: "/organizers" },
     { text: "Sponsors", href: "/sponsors" },
   ];

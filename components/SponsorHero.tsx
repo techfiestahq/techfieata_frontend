@@ -6,6 +6,7 @@ import SponsorHeroBgImage from "@/public/sponsor-hero-bg-image.png";
 import DevfestLogo from "@/public/devfest-logo.svg";
 // import GDGLogo from "@/public/gdg-logo.svg";
 import STAR_ICON from "@/public/star_shine.svg";
+import NicklesLogo from "@/public/Nickels Vc greyscale.svg";
 
 type Sponsor = { src: StaticImageData | string; alt: string };
 
@@ -41,18 +42,18 @@ const variants = {
 const defaults: SponsorsByTier = {
   platinum: [
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    { src: NicklesLogo, alt: "Nickles VC" },
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   ],
   gold: [
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
@@ -238,8 +239,12 @@ export default function SponsorsSection({
 
         {/* Platinum Tier */}
         <motion.div variants={variants.fadeUp}>
-          <TierMarquee label="Platinum Sponsors" speed={26} segmentLength={7} />
-          <div className="mt-6 md:mt-10">
+          <TierMarquee label="Headline Sponsor" speed={26} segmentLength={7} />
+          {/* <div className="mt-6 md:mt-10">
+            <LogoGrid items={sponsors.platinum} />
+          </div> */}
+
+          <div className="mt-6 md:mt-10 mx-auto max-w-[50px] text-center">
             <LogoGrid items={sponsors.platinum} />
           </div>
         </motion.div>

@@ -6,11 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 type TokenModalProps = {
-  isOpen: boolean;
+  isTokenSentOpen: boolean;
   onClose: () => void;
 };
 
-export default function TokenSentModal({ isOpen, onClose }: TokenModalProps) {
+export default function TokenSentModal({
+  isTokenSentOpen,
+  onClose,
+}: TokenModalProps) {
   // click outside to close
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     // only close if the click was directly on the backdrop, not on modal content
@@ -21,7 +24,7 @@ export default function TokenSentModal({ isOpen, onClose }: TokenModalProps) {
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isTokenSentOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -34,7 +37,7 @@ export default function TokenSentModal({ isOpen, onClose }: TokenModalProps) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-[#0D0D0D] text-white rounded-3xl shadow-2xl w-[90%] max-w-1/2 p-8 border border-[#24096FA1]"
+            className="relative bg-[#0D0D0D] text-white rounded-3xl shadow-2xl w-[90%] lg:max-w-1/2 p-8 border border-[#141414]"
           >
             {/* Close button */}
             <button

@@ -7,6 +7,10 @@ import DevfestLogo from "@/public/devfest-logo.svg";
 // import GDGLogo from "@/public/gdg-logo.svg";
 import STAR_ICON from "@/public/star_shine.svg";
 import NicklesLogo from "@/public/Nickels Vc greyscale.svg";
+import ProvoloLogo from "@/public/provolo.png";
+import OvicoLogo from "@/public/ovico.jpeg";
+import NextLabLogo from "@/public/nextlab.jpeg";
+import CapverseLogo from "@/public/capverse.jpeg";
 
 type Sponsor = { src: StaticImageData | string; alt: string };
 
@@ -57,28 +61,28 @@ const defaults: SponsorsByTier = {
   ],
   gold: [
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    { src: ProvoloLogo, alt: "DevFest Ogbomoso" },
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    { src: OvicoLogo, alt: "DevFest Ogbomoso" },
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    { src: NextLabLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   ],
   silver: [
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    { src: CapverseLogo, alt: "DevFest Ogbomoso" },
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
     // { src: GDGLogo, alt: "GDG Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-    { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+    // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   ],
 };
 
@@ -252,7 +256,8 @@ export default function SponsorsSection({
         {/* Gold Tier */}
         <motion.div variants={variants.fadeDown} className="mt-14 md:mt-20">
           <TierMarquee label="Gold Sponsors" speed={28} segmentLength={8} />
-          <div className="mt-6 md:mt-10">
+          <div className="lg:pl-92">
+            <div className="mt-6 md:mt-10 max-w-[800px] mx-auto px-[-200px]"></div>
             <LogoGrid items={sponsors.gold} />
           </div>
         </motion.div>
@@ -262,8 +267,8 @@ export default function SponsorsSection({
           variants={variants.fadeDown}
           className="mt-14 md:mt-20 mb-12 lg:mb-0"
         >
-          <TierMarquee label="Silver Sponsors" speed={30} segmentLength={8} />
-          <div className="mt-6 md:mt-10">
+          <TierMarquee label="Silver Sponsor" speed={26} segmentLength={7} />
+          <div className="mt-6 md:mt-10 mx-auto max-w-[50px] text-center">
             <LogoGrid items={sponsors.silver} />
           </div>
         </motion.div>

@@ -3,17 +3,22 @@ import React from "react";
 import Image from "next/image";
 import ContainerLayout from "@/components/ContainerLayout";
 import SponsorBgImage from "@/public/sponsor-bg-image.jpg";
-import DevfestLogo from "@/public/devfest-logo.svg";
+// import DevfestLogo from "@/public/devfest-logo.svg";
 import GDGLogo from "@/public/gdg-logo.svg";
 import Asset3logo from "@/public/asset-3logo.webp";
 import BkHeader from "@/public/bkheader-01.webp";
 import KtcSticker from "@/public/ktc-sticker-black.webp";
 import GdgLautech from "@/public/gdg-lautech.webp";
 import GdgIlorin from "@/public/gdg-ilorin.webp";
+import Acoms from "@/public/ACOMS.jpg";
+import Danjaypegs from "@/public/DANDYJPEGs.png";
+import eclat from "@/public/eclas.jpeg";
+import Blockchain from "@/public/blockchain.jpg";
+import GDGIlorin from "@/public/gdg-ilorin.jpeg";
 
 const sponsors = [
   { src: GDGLogo, alt: "GDG Ogbomoso" },
-  { src: DevfestLogo, alt: "DevFest Ogbomoso" },
+  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: GdgLautech, alt: "gdg lautech" },
   { src: GdgIlorin, alt: "Gdg Ilorin" },
   // { src: GDGLogo, alt: "GDG Ogbomoso" },
@@ -29,6 +34,11 @@ const sponsors = [
   // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: KtcSticker, alt: "DevFest Ogbomoso" },
+  { src: Acoms, alt: "DevFest Ogbomoso" },
+  { src: Danjaypegs, alt: "DevFest Ogbomoso" },
+  { src: eclat, alt: "DevFest Ogbomoso" },
+  { src: Blockchain, alt: "DevFest Ogbomoso" },
+  { src: GDGIlorin, alt: "DevFest Ogbomoso" },
 ];
 
 export default function Sponsors() {

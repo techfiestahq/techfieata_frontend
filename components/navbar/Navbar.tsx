@@ -80,6 +80,7 @@ const Navbar = () => {
               </button>
             </div>
           </div>
+
           {/* Center: pill group */}
           <div className="hidden lg:flex flex-1 justify-center">
             <div className="bg-[#CFD3EB1A] rounded-[100px] text-[#FFFFFFCC] text-base font-normal ring-1 ring-[#FFFFFF]">

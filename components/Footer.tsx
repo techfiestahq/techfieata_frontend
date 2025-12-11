@@ -8,6 +8,7 @@ import TwitterIcon from "@/public/x.svg";
 import InstagramIcon from "@/public/Ig.svg";
 import LinkedinIcon from "@/public/Ln.svg";
 import logo from "@/public/logo.svg";
+import NicklesLogo from "@/public/Nickels Vc greyscale.svg";
 
 const container = {
   hidden: { opacity: 0 },
@@ -48,14 +49,34 @@ export default function Footer() {
             variants={fadeUp}
             className="flex justify-center lg:justify-start"
           >
-            <div className="relative h-10 w-[160px] sm:h-14 sm:w-[200px] lg:h-16 lg:w-[240px]">
-              <Image
-                src={logo}
-                alt="TechFiesta Logo"
-                fill
-                priority
-                className="object-contain brightness-0 invert"
-              />
+            <div className="w-[360px] flex items-center gap-1">
+              <button
+                aria-label="Home"
+                className="relative h-10 w-[180px] shrink-0 lg:h-12 lg:w-[110px]"
+              >
+                <Image
+                  src={logo}
+                  alt="Techfiesta"
+                  fill
+                  priority
+                  className="object-contain brightness-0 invert"
+                />
+              </button>
+
+              <span className="text-gray-500 text-xl font-light">×</span>
+
+              <button
+                aria-label="Partner"
+                className="relative h-10 w-[180px] shrink-0 lg:h-12 lg:w-[210px]"
+              >
+                <Image
+                  src={NicklesLogo}
+                  alt="Partner Logo"
+                  fill
+                  priority
+                  className="object-contain invert"
+                />
+              </button>
             </div>
           </motion.div>
 

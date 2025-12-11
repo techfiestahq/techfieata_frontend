@@ -15,30 +15,32 @@ import Danjaypegs from "@/public/DANDYJPEGs.png";
 import eclat from "@/public/eclas.jpeg";
 import Blockchain from "@/public/blockchain.jpg";
 import GDGIlorin from "@/public/gdg-ilorin.jpeg";
+import NicklesLogo from "@/public/Nickels Vc greyscale.svg";
+import ProvoloLogo from "@/public/provolo.png";
+import OvicoLogo from "@/public/ovico.jpeg";
+import NextLabLogo from "@/public/nextlab.jpeg";
+import CapverseLogo from "@/public/capverse.jpeg";
 
 const sponsors = [
+  { src: NicklesLogo, alt: "GDG Ogbomoso" },
+  { src: ProvoloLogo, alt: "gdg lautech" },
+  { src: OvicoLogo, alt: "Gdg Ilorin" },
+  { src: NextLabLogo, alt: "DevFest Ogbomoso" },
+  { src: CapverseLogo, alt: "DevFest Ogbomoso" },
+];
+
+const partners = [
   { src: GDGLogo, alt: "GDG Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: GdgLautech, alt: "gdg lautech" },
   { src: GdgIlorin, alt: "Gdg Ilorin" },
-  // { src: GDGLogo, alt: "GDG Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  // { src: GDGLogo, alt: "GDG Ogbomoso" },
-  // { src: GDGLogo, alt: "GDG Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: Asset3logo, alt: "DevFest Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: BkHeader, alt: "DevFest Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
-  // { src: DevfestLogo, alt: "DevFest Ogbomoso" },
   { src: KtcSticker, alt: "DevFest Ogbomoso" },
   { src: Acoms, alt: "DevFest Ogbomoso" },
-  { src: Danjaypegs, alt: "DevFest Ogbomoso" },
   { src: eclat, alt: "DevFest Ogbomoso" },
   { src: Blockchain, alt: "DevFest Ogbomoso" },
   { src: GDGIlorin, alt: "DevFest Ogbomoso" },
+  { src: Danjaypegs, alt: "DevFest Ogbomoso" },
 ];
 
 export default function Sponsors() {
@@ -67,25 +69,36 @@ export default function Sponsors() {
 
         {/* Heading */}
         <h2 className="text-2xl md:text-[42px] font-semibold text-[#000000] mb-12">
-          Community Partners & Sponsors
+          Sponsors
         </h2>
 
-        {/* Logos grid */}
-        <div className="mx-auto grid max-w-5xl grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-10 gap-y-10 items-center justify-items-center">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-10 items-center justify-items-center">
           {sponsors.map((s, idx) => (
-            // <div key={idx} className="flex items-center justify-center">
-            //   <Image
-            //     src={s.src}
-            //     alt={s.alt}
-            //     className="h-16 w-auto md:h-20 object-contain"
-            //   />
-            // </div>
             <div key={idx} className="flex items-center justify-center">
               <Image
                 src={s.src}
                 alt={s.alt}
                 className={`h-16 w-auto md:h-20 object-contain ${
                   s.alt === "gdg lautech" ? "!h-28 md:!h-32" : ""
+                }`}
+              />
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl md:text-[42px] font-semibold text-[#000000] mb-12 mt-40">
+          Community Partners
+        </h2>
+
+        {/* Logos grid */}
+        <div className="mx-auto grid max-w-5xl grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-10 gap-y-10 items-center justify-items-center">
+          {partners.map((p, idx) => (
+            <div key={idx} className="flex items-center justify-center">
+              <Image
+                src={p.src}
+                alt={p.alt}
+                className={`h-16 w-auto md:h-20 object-contain ${
+                  p.alt === "gdg lautech" ? "!h-28 md:!h-32" : ""
                 }`}
               />
             </div>

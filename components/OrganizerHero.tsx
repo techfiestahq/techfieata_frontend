@@ -4,7 +4,7 @@ import Image from "next/image";
 import ContainerLayout from "@/components/ContainerLayout";
 import { motion } from "framer-motion";
 import Organizer1 from "@/public/olaifa-glory.webp";
-import Organizer2 from "@/public/Esuola-Daniel.webp";
+// import Organizer2 from "@/public/Esuola-Daniel.webp";
 import Organizer3 from "@/public/Quyum-Kehinde.webp";
 import Organizer4 from "@/public/Toby-Toby.webp";
 import SponsorHeroBgImage from "@/public/sponsor-hero-bg-image.png";
@@ -41,7 +41,7 @@ type Person = { name: string; src: StaticImageData; role: string };
 export default function SponsorsSection() {
   const people: Person[] = [
     { name: "Glory Olaifa", src: Organizer1, role: "Convener" },
-    { name: "Daniel Esuola", src: Organizer2, role: "Organizer" },
+    // { name: "Daniel Esuola", src: Organizer2, role: "Organizer" },
     { name: "Kehinde Quyum", src: Organizer3, role: "Organizer" },
     { name: "Adio Testimony", src: Organizer4, role: "Organizer" },
   ];
@@ -75,7 +75,7 @@ export default function SponsorsSection() {
           variants={variants.container}
           initial="hidden"
           animate="visible"
-          className="mx-auto w-full px-4 sm:px-6 mt-[101px]"
+          className="mx-auto w-4/5 px-4 sm:px-6 mt-[101px]"
         >
           {/* Heading */}
           <motion.h2
@@ -86,7 +86,7 @@ export default function SponsorsSection() {
           </motion.h2>
 
           {/* Cards */}
-          <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 justify-items-center">
+          <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 justify-items-center">
             {people.map(({ name, src, role }, i) => (
               <div key={i} className="w-full max-w-[360px]">
                 <div className="m-auto relative w-[260px] h-[260px] md:w-[300px] md:h-[300px] overflow-hidden rounded-xl ring-1 ring-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
